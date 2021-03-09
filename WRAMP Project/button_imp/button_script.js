@@ -9,22 +9,22 @@ function pageChanger(){
     switch(buttonNum){
         case 2:
             document.getElementById("questionHeader").innerHTML = "Question 2/21";
-            //document.getElementById("imgClickAndChange").src = "data2";
+            document.getElementById("imgClickAndChange").src = "C:\Users\marit\OneDrive\Documents\GitHub\WRAMP-code\images\pie\pie-10.png";
             sessionStorage.setItem("buttonClicks", "3")
             break;
         case 3:
             document.getElementById("questionHeader").innerHTML = "Question 3/21";
-            //document.getElementById("imgClickAndChange").src = "data3";
+            document.getElementById("imgClickAndChange").src = "C:\Users\marit\OneDrive\Documents\GitHub\WRAMP-code\images\pie\pie-15.png";
             sessionStorage.setItem("buttonClicks", "4")
             break;
         case 4:
             document.getElementById("questionHeader").innerHTML = "Question 4/21";
-            //document.getElementById("imgClickAndChange").src = "data4";
+            document.getElementById("imgClickAndChange").src = "C:\Users\marit\OneDrive\Documents\GitHub\WRAMP-code\images\pie\pie-20.png";
             sessionStorage.setItem("buttonClicks", "5")
             break;
         case 5:
             document.getElementById("questionHeader").innerHTML = "Question 5/21";
-            //document.getElementById("imgClickAndChange").src = "data5";
+            document.getElementById("imgClickAndChange").src = "data5";
             sessionStorage.setItem("buttonClicks", "6")
             break;
         case 6:
@@ -43,7 +43,6 @@ function pageChanger(){
             sessionStorage.setItem("buttonClicks", "9")
             break;
         case 9:
-            document.getElementById("questionHeader").innerHTML = "Question 9/21";
             //document.getElementById("imgClickAndChange").src = "data9";
             sessionStorage.setItem("buttonClicks", "10")
             break;
@@ -61,7 +60,8 @@ function pageChanger(){
             document.getElementById("questionHeader").innerHTML = "Question 12/21";
             //document.getElementById("imgClickAndChange").src = "data12";
             sessionStorage.setItem("buttonClicks", "13")
-            break;
+            break;            document.getElementById("questionHeader").innerHTML = "Question 9/21";
+
         case 13:
             document.getElementById("questionHeader").innerHTML = "Question 13/21";
             //document.getElementById("imgClickAndChange").src = "data13";

@@ -17,20 +17,38 @@
     <script>
         sessionStorage.setItem("buttonClicks", "2"); </script> <!--Sets global variable for use later in code-->
 
-    <style>
+    <script src="WRAMP Project\button_imp\button_script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
 
-    .button2 {
-        background-color: red;
-        color: white;
-    } 
-    
-    .button2:hover {
-        text-decoration: none;
-        color: white;
-    }
+    <style>
+        .button1 {
+            background-color: red;
+            color: white;
+            padding: 5px 12px;
+            float: left;
+        }
+
+        ​ .button1:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        ​ .button2 {
+            background-color: red;
+            color: white;
+            padding: 5px 12px;
+            float: right;
+        }
+
+        .button2:hover {
+            text-decoration: none;
+            color: white;
+        }
     
     </style>
 </head>
+
 <body class="container">
 
     <h2 id="questionHeader">
@@ -43,9 +61,12 @@
     <!--change to first dataviz image-->
 
     <form>
-        Text Field</br>
-        <input type="text" name="testfield">
-        <script src = "button_imp\button_script.js"></script>
+        Text Field</br> <!-- prob edit text here-->
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="" id="textAnswer"></textarea>
+        </div>
+        <!--<input type="text" name="testfield">
+        <script src = "button_imp\button_script.js"></script>-->
         <button onclick="pageChanger()" type = "button" id="formButton" class="button2">Submit</button>
     </form><br>
     

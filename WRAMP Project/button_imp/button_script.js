@@ -20,7 +20,7 @@ function generateSessionID() {
 }//used to generate session id
 
 function pageChanger(){
-    
+   
     const buttonNum = Number(sessionStorage.getItem("buttonClicks"));
     switch(buttonNum){
         case 2:

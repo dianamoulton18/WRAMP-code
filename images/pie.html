@@ -30,12 +30,12 @@
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
         // Create data
-        var data = { a: 9, b: 20 }
+        var data = { a: 100, b: 0 }
 
         // set the color scale
         var color = d3.scaleOrdinal()
             .domain(data)
-            .range(["#98abc5", "#8a89a6"])
+            .range(["#fa9fb5", "#c51b8a"])
 
         // Compute the position of each group on the pie:
         var pie = d3.pie()

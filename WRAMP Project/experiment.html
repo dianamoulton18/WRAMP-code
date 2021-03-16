@@ -18,25 +18,11 @@
         sessionStorage.setItem("buttonClicks", "2"); </script> <!--Sets global variable for use later in code-->
 
     <style>
-    
-    .button1 {
-        background-color: red;
-        color: white;
-        padding: 5px 12px;
-        float: left;
-    }
-
-    .button1:hover {
-        text-decoration: none;
-        color: white;
-    }
 
     .button2 {
         background-color: red;
         color: white;
-        padding: 5px 12px;
-        float: right;
-    }
+    } 
     
     .button2:hover {
         text-decoration: none;
@@ -46,24 +32,22 @@
     </style>
 </head>
 <body class="container">
-    <h1>
-        Experiment
-    </h1>
+
     <h2 id="questionHeader">
         Question 1/21
     </h2>
     
-    <img id="imgClickAndChange" src="C:\Users\marit\OneDrive\Documents\GitHub\WRAMP-code\images\pie\pie-05.png" height="225" width="200" alt="data visualization"><br><br>
+    <p>Instruction</p>
+
+    <img src="https://github.com/dianamoulton18/WRAMP-code/blob/master/images/pie/pie-0.png?raw=true" height="335" width="335" alt="data visualization" id="imgClickAndChange"><br><br>
     <!--change to first dataviz image-->
 
     <form>
         Text Field</br>
         <input type="text" name="testfield">
         <script src = "button_imp\button_script.js"></script>
-        <button onclick="pageChanger()" type = "button" id="formButton">Submit</button>
+        <button onclick="pageChanger()" type = "button" id="formButton" class="button2">Submit</button>
     </form><br>
     
-    <a href="intro.html" class="button1">Previous Page</a>
-    <a href="thanks.html" class="button2">Finish</a>
 </body>
 </html>

@@ -17,31 +17,19 @@
     <script>
         sessionStorage.setItem("buttonClicks", "2"); </script> <!--Sets global variable for use later in code-->
 
-    <script src="./button_imp/button_script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
 
+    <script src="./button_imp/button_script.js"> </script>
     <style>
-        .button1 {
+      .button {
             background-color: red;
             color: white;
             padding: 5px 12px;
             float: left;
         }
 
-        ​ .button1:hover {
-            text-decoration: none;
-            color: white;
-        }
-
-        ​ .button2 {
-            background-color: red;
-            color: white;
-            padding: 5px 12px;
-            float: right;
-        }
-
-        .button2:hover {
+        ​ .button:hover {
             text-decoration: none;
             color: white;
         }
@@ -64,12 +52,13 @@
 
     <form>
         Text Field</br> <!-- prob edit text here-->
+        
         <div class="form-floating">
             <textarea class="form-control" placeholder="" id="textAnswer"></textarea>
         </div>
         <!--<input type="text" name="testfield">
         <script src = "button_imp\button_script.js"></script>-->
-        <button onclick="pageChanger()" type = "button" id="formButton" class="button2">Submit</button>
+        <button onclick="pageChanger()" type = "button" id="formButton" class="button">Submit</button>
     </form><br>
     
 </body>

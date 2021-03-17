@@ -17,7 +17,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
 
-    <script src="WRAMP Project\button_imp\button_script.js"> </script>
+    <script src="./button_imp/button_script.js"> </script>
     <style>
         .button {
             background-color: red;
@@ -57,17 +57,18 @@
             By clicking “Next”, you agree to participate. Before we begin, please enter your:<br>
         </p>
         <div class=“form-floating”>
-            <textarea class=“form-control” placeholder=“Country” id=“floatingTextarea”></textarea>
+            <textarea class=“form-control” placeholder=“Country” id='country'></textarea>
             <label for=“floatingTextarea”>What country are you from?</label>
         </div>
         <div class=“form-floating”>
-            <textarea class=“form-control” placeholder=“Age” id=“floatingTextarea”></textarea>
+            <textarea class=“form-control” placeholder=“Age” id='age'></textarea>
             <label for=“floatingTextarea”>How old are you?</label>
         </div>
-        <div class=“form-floating”><textarea class=“form-control” placeholder=“Language” id=“floatingTextarea”></textarea>
+        <div class=“form-floating”><textarea class=“form-control” placeholder=“Language” id='language'></textarea>
             <label for=“floatingTextarea”>What is your prefered language?</label>
         </div><br>
-        <a href="intro.html" class="button">Start</a>
+        <!-- <a href="intro.html" class="button">Start</a> -->
+        <button type="button" class="btn btn-primary" onclick="onClickStart()">Start</button>
     </div>
     </body>
 </html>

@@ -3,14 +3,38 @@
 */
 
 // Your web app's Firebase configuration
+// var firebaseConfig = {
+//     apiKey: "AIzaSyAq-BWyAhZzAtqJHQhoy6s79tGHFMLaKBk",
+//     authDomain: "wramp-db.firebaseapp.com",
+//     projectId: "wramp-db",
+//     storageBucket: "wramp-db.appspot.com",
+//     messagingSenderId: "236925835989",
+//     appId: "1:236925835989:web:25f2921cd40327d7b4e05c"
+// }; //needed to run the database on the website
 var firebaseConfig = {
-    apiKey: "AIzaSyAq-BWyAhZzAtqJHQhoy6s79tGHFMLaKBk",
-    authDomain: "wramp-db.firebaseapp.com",
-    projectId: "wramp-db",
-    storageBucket: "wramp-db.appspot.com",
-    messagingSenderId: "236925835989",
-    appId: "1:236925835989:web:25f2921cd40327d7b4e05c"
-}; //needed to run the database on the website
+    apiKey: "AIzaSyAPByriPq7_Xoruw3anJp5jdHJ06ZbLCno",
+    authDomain: "wramp1.firebaseapp.com",
+    projectId: "wramp1",
+    storageBucket: "wramp1.appspot.com",
+    messagingSenderId: "406176078321",
+    appId: "1:406176078321:web:93b9cec0e2d09bbb274c50"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+//   FIREBASE
+// sessions 
+//   session1: 
+//     country, age,  
+//   session2: 
+//     country, age, ...
+
+// exp 
+//   session1-1: 
+//     value, chart, answer
+//   session1-2: 
+//     value, chart, answer
+
 
 function generateSessionID() {
     const d = new Date();
@@ -19,11 +43,49 @@ function generateSessionID() {
     return m + d.getDate() + "-" + d.getHours() + d.getMinutes() + "-" + d.getSeconds() + d.getMilliseconds()
 }//used to generate session id
 
+function onClickStart() {
+    var sessionId = generateSessionID()
+    doc = {
+        sessionId: sessionId,
+        country: $('#country').val(),
+        language: $('#language').val(),
+        age: $('#age').val(), 
+        chart: "pie",
+    }
+    if (!firebase.apps.length){
+        firebase.initializeApp(firebaseConfig)
+    }
+    console.log("here")
+    var fire = firebase.database()
+    fire.ref("sessions/"+sessionId).set(doc)
+    sessionStorage.setItem("demography", JSON.stringify(doc))
+    // location.href='intro.html'
+}
+
+function logAnswer(sessionId){
+    doc = {
+        value: 12,
+        chart: "pie",
+        answer: "testestse"
+    }
+
+    if (!firebase.apps.length){
+        firebase.initializeApp(firebaseConfig)
+    }
+    var fire = firebase.database()
+    fire.ref("experiment/"+sessionId).set(doc)
+    // sessionStorage.setItem("demography", JSON.stringify(doc))
+}
+
+
 function pageChanger(){
    
+    dem = JSON.parse(sessionStorage.getItem("demography"))
     const buttonNum = Number(sessionStorage.getItem("buttonClicks"));
+    
     switch(buttonNum){
         case 2:
+            logAnswer(dem.sessionId)
             document.getElementById("questionHeader").innerHTML = "Question 2/21";
             document.getElementById("imgClickAndChange").src = "https://github.com/dianamoulton18/WRAMP-code/blob/master/images/pie/pie-005.png?raw=true";
             sessionStorage.setItem("buttonClicks", "3")

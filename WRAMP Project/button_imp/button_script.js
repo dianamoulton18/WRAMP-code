@@ -60,7 +60,7 @@ function onClickStart() {
     fire.ref("sessions/" + sessionId).set(doc)
     sessionStorage.setItem("demography", JSON.stringify(doc))
     // location.href='intro.html'
-    setTimeout(function () { window.location = 'intro.html' }, 2000)
+    setTimeout(function () { window.location = 'intro.html' }, 1000)
 }
 
 function logAnswer(sessionId) {
@@ -189,6 +189,8 @@ function pageChanger() {
             break;
         case 22:
             document.getElementById("formButton").style.visibility = "hidden";
+            setTimeout(function () { window.location = 'thanks.html' }, 1000)
+
             break;
     }
 }

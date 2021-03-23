@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <title>Experiment</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -15,14 +16,15 @@
         crossorigin="anonymous"></script>
 
     <script>
-        sessionStorage.setItem("buttonClicks", "2"); </script> <!--Sets global variable for use later in code-->
+        sessionStorage.setItem("buttonClicks", "2");</script>
+    <!--Sets global variable for use later in code-->
 
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
 
     <script src="./button_imp/button_script.js"> </script>
     <style>
-      .button {
+        .button {
             background-color: red;
             color: white;
             padding: 5px 12px;
@@ -33,33 +35,39 @@
             text-decoration: none;
             color: white;
         }
-    
     </style>
 </head>
 
 <body class="container">
 
-    <h2 id="questionHeader">
+    <h2 id="questionHeader" style="margin-top: 10px;">
         Question 1/21
     </h2>
-    
-    <p>
-        Observe the visualization and describe your chance of picking a pink marble and winning the game.
-    </p>
+    <div>
+        <br> Imagine yourself participating in a game where you have to pick a marble from a
+        set at random. Some of the marbles are pink, and some of them are purple. The game has two outcomes: <br>
+        - If you pull a purple marble, you win. <br>
+        - If you pull a pink marble, you lose.<br>
+        <br> In the pie chart, the purple section (darker color) represents the proportion of purple
+        marbles in the set.
+    </div>
 
-    <img src="https://github.com/dianamoulton18/WRAMP-code/blob/master/images/pie/pie-070.png?raw=true" height="335" width="335" alt="data visualization" id="imgClickAndChange"><br><br>
+    <img src="https://github.com/dianamoulton18/WRAMP-code/blob/master/images/pie/pie-070.png?raw=true" height="335"
+        width="335" alt="data visualization" id="imgClickAndChange" style="margin-top: 10px;"><br><br>
     <!--change to first dataviz image-->
 
     <form>
-        Text Field</br> <!-- prob edit text here-->
-        
+        <!-- Text Field</br> prob edit text here -->
+        <b>Your task: </b> Observe the visualization and describe your chance of picking a purple marble
+        and winning the game.
+        <br> Do <b>NOT</b> use numerical answer. Instead, use familiar words and expressions to describe and communicate
+        your chances. <br> <br>
         <div class="form-floating">
-            <textarea class="form-control" placeholder="" id="textAnswer"></textarea>
+            <textarea class="form-control" placeholder="" id="textAnswer" style="margin-bottom: 10px;"></textarea>
         </div>
-        <!--<input type="text" name="testfield">
-        <script src = "button_imp\button_script.js"></script>-->
-        <button onclick="pageChanger()" type = "button" id="formButton" class="button">Submit</button>
+        <button onclick="pageChanger()" type="button" id="formButton" class="button">Submit</button>
     </form><br>
-    
+
 </body>
+
 </html>

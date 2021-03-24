@@ -3,24 +3,24 @@
 */
 
 // Your web app's Firebase configuration
-// var firebaseConfig = {
-//     apiKey: "AIzaSyAq-BWyAhZzAtqJHQhoy6s79tGHFMLaKBk",
-//     authDomain: "wramp-db.firebaseapp.com",
-//     projectId: "wramp-db",
-//     storageBucket: "wramp-db.appspot.com",
-//     messagingSenderId: "236925835989",
-//     appId: "1:236925835989:web:25f2921cd40327d7b4e05c"
-// }; //needed to run the database on the website
 var firebaseConfig = {
-    apiKey: "AIzaSyAPByriPq7_Xoruw3anJp5jdHJ06ZbLCno",
-    authDomain: "wramp1.firebaseapp.com",
-    projectId: "wramp1",
-    storageBucket: "wramp1.appspot.com",
-    messagingSenderId: "406176078321",
-    appId: "1:406176078321:web:93b9cec0e2d09bbb274c50"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    apiKey: "AIzaSyAq-BWyAhZzAtqJHQhoy6s79tGHFMLaKBk",
+    authDomain: "wramp-db.firebaseapp.com",
+    projectId: "wramp-db",
+    storageBucket: "wramp-db.appspot.com",
+    messagingSenderId: "236925835989",
+    appId: "1:236925835989:web:25f2921cd40327d7b4e05c"
+}; //needed to run the database on the website
+// var firebaseConfig = {
+//     apiKey: "AIzaSyAPByriPq7_Xoruw3anJp5jdHJ06ZbLCno",
+//     authDomain: "wramp1.firebaseapp.com",
+//     projectId: "wramp1",
+//     storageBucket: "wramp1.appspot.com",
+//     messagingSenderId: "406176078321",
+//     appId: "1:406176078321:web:93b9cec0e2d09bbb274c50"
+// };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 //   FIREBASE
 // sessions 
@@ -49,41 +49,42 @@ function onClickStart() {
         sessionId: sessionId,
         country: $('#country').val(),
         language: $('#language').val(),
-        age: $('#age').val(), 
+        age: $('#age').val(),
         chart: "pie",
     }
-    if (!firebase.apps.length){
+    if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig)
     }
-    console.log("here")
+    // console.log("here")
     var fire = firebase.database()
-    fire.ref("sessions/"+sessionId).set(doc)
+    fire.ref("sessions/" + sessionId).set(doc)
     sessionStorage.setItem("demography", JSON.stringify(doc))
     // location.href='intro.html'
+    setTimeout(function () { window.location = 'intro.html' }, 1000)
 }
 
-function logAnswer(sessionId){
+function logAnswer(sessionId) {
     doc = {
         value: $('#value').val(),
         chart: "pie",
         answer: $("#answer").val()
     }
 
-    if (!firebase.apps.length){
+    if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig)
     }
     var fire = firebase.database()
-    fire.ref("experiment/"+sessionId).set(doc)
+    fire.ref("experiment/" + sessionId).set(doc)
     // sessionStorage.setItem("demography", JSON.stringify(doc))
 }
 
 
-function pageChanger(){
-   
+function pageChanger() {
+
     dem = JSON.parse(sessionStorage.getItem("demography"))
     const buttonNum = Number(sessionStorage.getItem("buttonClicks"));
-    
-    switch(buttonNum){
+
+    switch (buttonNum) {
         case 2:
             logAnswer(dem.sessionId)
             document.getElementById("questionHeader").innerHTML = "Question 2/21";
@@ -139,7 +140,7 @@ function pageChanger(){
             document.getElementById("questionHeader").innerHTML = "Question 12/21";
             document.getElementById("imgClickAndChange").src = "https://github.com/dianamoulton18/WRAMP-code/blob/master/images/pie/pie-060.png?raw=true";
             sessionStorage.setItem("buttonClicks", "13")
-            break;            
+            break;
 
         case 13:
             document.getElementById("questionHeader").innerHTML = "Question 13/21";
@@ -188,6 +189,8 @@ function pageChanger(){
             break;
         case 22:
             document.getElementById("formButton").style.visibility = "hidden";
+            setTimeout(function () { window.location = 'thanks.html' }, 1000)
+
             break;
     }
 }

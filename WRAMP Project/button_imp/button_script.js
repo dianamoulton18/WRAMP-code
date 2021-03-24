@@ -64,9 +64,9 @@ function onClickStart() {
 
 function logAnswer(sessionId){
     doc = {
-        value: 12,
+        value: $('#value').val(),
         chart: "pie",
-        answer: "testestse"
+        answer: $("#answer").val()
     }
 
     if (!firebase.apps.length){

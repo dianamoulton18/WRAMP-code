@@ -221,7 +221,7 @@ function pageChanger() {
             document.getElementById("textAnswer").value = ""
             break;
         case 21:
-            logAnswer(dem.sessionId, 90, 20)
+            logAnswer(dem.sessionId, 90, )
             document.getElementById("questionHeader").innerHTML = "Question 21/21";
             document.getElementById("imgClickAndChange").src = "https://github.com/dianamoulton18/WRAMP-code/blob/master/images/pie/pie-095.png?raw=true";
             sessionStorage.setItem("buttonClicks", "22")
